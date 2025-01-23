@@ -430,7 +430,7 @@ uc_err reg_write(void *_env, int mode, unsigned int regid, const void *value,
             CHECK_REG_TYPE(uint32_t);
             env->pc = (*(uint32_t *)value & ~1);
             env->thumb = (*(uint32_t *)value & 1);
-            env->uc->thumb = (*(uint32_t *)value & 1);
+            // env->uc->thumb = (*(uint32_t *)value & 1);
             env->regs[15] = (*(uint32_t *)value & ~1);
             *setpc = 1;
             break;
